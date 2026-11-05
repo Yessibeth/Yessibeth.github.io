@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yessibeth López | Portafolio</title>
+  <meta name="description" content="Portafolio de Yessibeth López, estudiante de Informática para la Gestión Educativa y Empresarial.">
+  <style>
+    :root {
+      --bg: #0f0a1f;
+      --card: #1a1230;
+      --text: #ece8f7;
+      --muted: #b9b0d4;
+      --accent: #a78bfa;
+      --accent2: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(160deg, #2a1650 0%, #0f0a1f 70%);
+    }
+    header h1 { font-size: clamp(2rem, 6vw, 3.2rem); }
+    header h1 span { color: var(--accent); }
+    header p { color: var(--muted); max-width: 640px; margin: 14px auto 0; }
+    .btns { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      padding: 10px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--accent);
+      color: var(--text);
+      transition: .2s;
+    }
+    .btn.primary { background: var(--accent); color: #1a1230; }
+    .btn:hover { transform: translateY(-2px); opacity: .9; }
+    main { max-width: 900px; margin: 0 auto; padding: 20px; }
+    section { margin: 50px 0; }
+    h2 { font-size: 1.6rem; margin-bottom: 18px; color: var(--accent); }
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid #2d2150;
+    }
+    .card p + p { margin-top: 12px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .grid .card h3 { font-size: 1.05rem; margin-bottom: 6px; }
+    .grid .card p { color: var(--muted); font-size: .95rem; }
+    .soon { text-align: center; color: var(--muted); }
+    footer {
+      text-align: center;
+      padding: 30px 20px 40px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>¡Hola! Soy <span>Yessibeth López</span> 🦊</h1>
+    <p>
+      Estudiante de la Licenciatura en Informática para la Gestión Educativa
+      y Empresarial en la Universidad de Panamá 🎓
+    </p>
+    <div class="btns">
+      <a class="btn primary" href="#sobre-mi">Conóceme</a>
+      <a class="btn" href="#contacto">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="sobre-mi">
+      <h2>👩‍💻 Sobre mí</h2>
+      <div class="card">
+        <p>
+          Me apasiona la tecnología y todo lo relacionado con el aprendizaje y la
+          innovación. Siempre estoy dispuesta a participar en cursos, capacitaciones
+          y experiencias que me permitan ampliar mis conocimientos, especialmente en
+          informática, desarrollo de software y ciberseguridad.
+        </p>
+        <p>
+          Me gusta explorar nuevas herramientas y convertir lo aprendido en
+          proyectos y soluciones prácticas.
+        </p>
+        <p>
+          Más allá de la tecnología, disfruto compartir con mis amigos, viajar y
+          conocer nuevos lugares. Creo que el equilibrio entre el crecimiento
+          profesional y la vida personal es fundamental.
+        </p>
+      </div>
+    </section>
+
+    <section id="intereses">
+      <h2>🔐 Áreas de interés</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>💻 Desarrollo de software</h3>
+          <p>Crear soluciones prácticas con código.</p>
+        </div>
+        <div class="card">
+          <h3>🛡️ Ciberseguridad</h3>
+          <p>Proteger la información y los sistemas.</p>
+        </div>
+        <div class="card">
+          <h3>🔌 Electrónica y comunicación</h3>
+          <p>Cómo se conectan y comunican los dispositivos.</p>
+        </div>
+        <div class="card">
+          <h3>🎓 Tecnología y educación</h3>
+          <p>Informática aplicada a la gestión educativa y empresarial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos">
+      <h2>🚀 Proyectos</h2>
+      <div class="card soon">
+        <p>Estoy preparando mis primeros proyectos. ¡Muy pronto los verás aquí! ✨</p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>📫 Contacto</h2>
+      <div class="card">
+        <div class="btns" style="margin-top:0">
+          <a class="btn primary" href="https://www.linkedin.com/in/yessibethlopez-pa/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/Yessibeth" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.instagram.com/yessi_elr/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    ✨ Siempre abierta a aprender, colaborar y crecer ✨<br>
+    Hecho con 💜 por Yessibeth López · Panamá 🇵🇦
+  </footer>
+
+</body>
+</html>
