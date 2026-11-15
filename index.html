@@ -112,7 +112,7 @@ footer{text-align:center;color:var(--mut);font-size:.92rem;padding:10px 20px 60p
 .x{position:absolute;top:10px;right:10px;z-index:3;background:rgba(14,14,20,.7);color:#fff;border:0}
 .nv{position:absolute;top:calc(25% - 20px);z-index:3;background:rgba(14,14,20,.7);color:#fff;border:0}
 .nv.p{left:10px}.nv.n{right:10px}
-#snd{position:fixed;z-index:50;right:16px;bottom:16px;border:0;border-radius:99px;padding:9px 16px;background:rgba(20,20,26,.78);color:#F6EBDA;backdrop-filter:blur(6px);font-size:.9rem}
+
 @media(max-width:900px){.hero{grid-template-columns:1fr;align-items:center}.sobre{grid-template-columns:1fr}.foto{max-width:220px;margin:0 auto}
 #burger{display:block}.nav .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;padding:12px;background:var(--bg);border-bottom:1px solid var(--line)}.nav .links.o{display:flex}.nav .links a.l{display:block}}
 .links{display:flex;gap:4px}
@@ -249,6 +249,31 @@ footer .arriba:hover svg{transform:translateY(-3px)}
 .galv .ginfo h3{color:#F6EBDA;text-shadow:0 2px 8px rgba(0,0,0,.5)}
 .galv .gdots button{background:#F6EBDA}
 .galv .gdots button[aria-current="true"]{background:var(--sand)}
+/* tarjetas de proyecto informativas (no se abren) */
+.proy{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))}
+.poster{cursor:default}
+.poster .cu{padding:20px 24px 26px;display:flex;flex-direction:column;flex:1}
+.poster .cu h4{font:700 .78rem "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin:16px 0 4px}
+.poster .cu h4+p{margin:0}
+.poster .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:18px}
+.poster .tags span{font-size:.82rem;font-weight:500;padding:3px 13px;border-radius:99px;border:1.5px solid var(--c);transition:background .2s,color .2s}
+.poster:hover .tags span{background:var(--c);color:var(--on)}
+.poster .acc{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:18px}
+.poster .tags+.acc{margin-top:0}
+.poster .acc .btn{padding:8px 18px;font-size:.88rem}
+/* barra de idiomas y colaboradores */
+.poster .langbar{display:flex;height:8px;border-radius:99px;overflow:hidden;margin-top:6px;background:var(--line)}
+.poster .langbar i{display:block;height:100%}
+.poster .langleg{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:10px;font-size:.84rem;color:var(--mut)}
+.poster .langleg span{display:inline-flex;align-items:center;gap:6px}
+.poster .langleg span::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lc)}
+.poster .langleg b{color:var(--ink);font-weight:600}
+.poster .colab{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.poster .colab a{display:inline-flex;align-items:center;gap:12px;align-self:flex-start;font-size:.95rem;color:var(--ink);text-decoration:none;transition:color .2s}
+.poster .colab a span.n{text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px;transition:text-decoration-color .2s}
+.poster .colab a:hover span.n{text-decoration-color:var(--c)}
+.poster .colab img,.poster .colab .ini{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--c);flex:none}
+.poster .colab .ini{display:grid;place-items:center;background:var(--c);color:var(--on);font-weight:700}
 </style>
 </head>
 <body>
@@ -356,9 +381,9 @@ footer .arriba:hover svg{transform:translateY(-3px)}
 
  <section id="proyectos" class="rv">
   <h2 class="t">Proyectos</h2>
-  <p class="sub">Trabajos propios y colaboraciones. Toca uno para ver el detalle y abrir su repositorio en GitHub.</p>
+  <p class="sub">Trabajos propios y colaboraciones: qué hace cada uno y cómo lo construí.</p>
   <div class="tabs" role="group" aria-label="Filtrar proyectos">
-   <button class="tab" data-f="all" aria-pressed="true">Todos</button><button class="tab" data-f="Proyecto propio" aria-pressed="false">Propios</button><button class="tab" data-f="Colaboración" aria-pressed="false">Colaboración</button><button class="tab" data-f="Reto" aria-pressed="false">Reto</button>
+   <button class="tab" data-f="all" aria-pressed="true">Todos</button><button class="tab" data-f="Proyecto propio" aria-pressed="false">Propios</button><button class="tab" data-f="Colaboración" aria-pressed="false">Colaboración</button>
   </div>
   <div class="proy" id="proy"></div>
  </section>
@@ -421,11 +446,27 @@ const ALBUMES=[
 ];
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const P=[
-['Sendero del Saber','Proyecto propio','Proyecto educativo con estructura en HTML5: islas de español, matemáticas, programación y señas, además de perfil, tienda y panel para padres.','https://github.com/Yessibeth/sendero-del-saber','proyecto1.jpg','--gold'],
-['CONAC','Colaboración','Sitio web con páginas por provincia, noticias, galería y contacto. Trabajo en equipo en el repositorio de 0bregon.','https://github.com/0bregon/CONAC','proyecto2.jpg','--teal'],
-['Gimnasia Mental','Colaboración','Proyecto colaborativo del repositorio de 0bregon.','https://github.com/0bregon/GimnasiaMental','proyecto3.jpg','--sand'],
-['Ruta al Volante','Proyecto propio','Proyecto propio publicado en mi GitHub.','https://github.com/Yessibeth/ruta-al-volante','proyecto4.jpg','--coral'],
-['Estimador de Copago','Reto','Reto 3: un estimador de copago.','https://github.com/Yessibeth/reto3-estimador-copago','proyecto5.jpg','--lilac']];
+['Sendero del Saber','Proyecto propio',
+ 'Plataforma educativa para niños y niñas de Panamá, con cursos interactivos en islas de español, matemáticas, programación y lenguaje de señas, además de perfil, tienda y panel para padres.',
+ 'Que los niños aprendan a su propio ritmo, jugando, en un espacio pensado para ellos, y que los padres puedan acompañar su avance.',
+ 'Páginas en HTML5 y CSS, una por isla, con registro e inicio de sesión para estudiantes y padres (vinculados con un código) usando Supabase. Panel para padres, perfil, tienda y publicación en Netlify.',
+ ['HTML5','CSS','JavaScript','Supabase','Netlify'],'--gold','proyecto1.jpg','https://github.com/Yessibeth/sendero-del-saber','https://senderodelsaber.netlify.app/'],
+['CONAC','Colaboración',
+ 'Sitio informativo de varias páginas para la Confederación Nacional de Asentamientos Campesinos de Panamá.',
+ 'Organizar el acceso a la historia, actividades e información comunitaria de la organización.',
+ 'Páginas de organización, asentamientos, campañas, galería y noticias; navegación móvil; diseño responsive; publicación en GitHub Pages.',
+ ['HTML','CSS','JavaScript','GitHub Pages'],'--teal','proyecto2.jpg','https://github.com/0bregon/CONAC','https://0bregon.github.io/CONAC/',
+ [['HTML',85.6],['CSS',13],['JavaScript',1.4]],
+ [['Mariel Obregón','https://github.com/0bregon','colaboradores/mariel.jpg']]],
+['Gimnasia Mental','Colaboración',
+ 'Proyecto colaborativo del repositorio de 0bregon.',
+ 'AQUÍ VA EL OBJETIVO DEL PROYECTO.',
+ 'AQUÍ VA CÓMO SE CONSTRUYÓ.',
+ ['HTML','CSS','JavaScript'],'--sand','proyecto3.jpg','https://github.com/0bregon/GimnasiaMental','',
+ [['HTML',52.7],['CSS',33.1],['JavaScript',14.2]],
+ [['Mariel Obregón','https://github.com/0bregon','colaboradores/mariel.jpg'],
+  ['Isaías','https://github.com/isaiaszaambrano21-dotcom','colaboradores/isaias.jpg']]],
+];
 const C=[
 ['Universidad del Futuro – Tendencias Pedagógicas','Universidad de Panamá · 2026','Seminario-Taller de 40 horas','certs/universidad-panama.jpg'],
 ['Hackathon Copa Airlines – 7ª edición','Copa Airlines · Oct 2026','DevOps, APIs y observabilidad','certs/copa-airlines.jpg'],
@@ -435,10 +476,25 @@ const C=[
 const m=$('#m'),mb=$('#mb');let ci=0;
 const closeM=()=>m.classList.remove("o");
 /* proyectos */
-P.forEach((p,k)=>{const b=document.createElement('button');b.className='poster';b.dataset.t=p[1];b.style.setProperty('--c',`var(${p[5]})`);
-b.innerHTML=`<div class="img" style="--img:url('${p[4]}')"><span>${p[1]}</span></div><div class="cu"><h3>${p[0]}</h3><p>${p[2]}</p><em style="color:var(--c)">Ver detalle →</em></div>`;
-b.onclick=()=>{mb.innerHTML=`<button class="ib x" onclick="closeM()" aria-label="Cerrar">✕</button><div class="im" style="--bg2:linear-gradient(135deg,color-mix(in srgb,var(${p[5]}) 70%,#222),#2a2540)"><img src="${p[4]}" alt="" onerror="this.remove()"></div><div class="tx"><h3 style="color:var(${p[5]})">${p[0]}</h3><p>${p[1]} — ${p[2]}</p><a class="btn pri" href="${p[3]}" target="_blank" rel="noopener">Ver código</a></div>`;m.classList.add('o')};
-$('#proy').append(b)});
+P.forEach(p=>{
+ const [t,tipo,desc,obj,impl,tags,col,img,repo,demo,langs,colab]=p;
+ const LC={HTML:'#E34C26',CSS:'#663399',JavaScript:'#F1E05A'};
+ const langHTML=langs?`<h4>Idiomas</h4><div class="langbar" role="img" aria-label="${langs.map(l=>l[0]+' '+l[1]+'%').join(', ')}">${langs.map(l=>`<i style="width:${l[1]}%;background:${LC[l[0]]||'#888'}"></i>`).join('')}</div><div class="langleg">${langs.map(l=>`<span style="--lc:${LC[l[0]]||'#888'}"><b>${l[0]}</b> ${l[1]}%</span>`).join('')}</div>`:'';
+ const colabHTML=colab?`<h4>Colaboradores</h4><div class="colab">${colab.map(c=>`<a href="${c[1]}" target="_blank" rel="noopener"><img src="${c[2]}" alt="${c[0]}" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ini',textContent:'${c[0][0]}'}))"><span class="n">${c[0]}</span></a>`).join('')}</div>`:'';
+ const tagsHTML=langs?'':`<div class="tags">${tags.map(x=>`<span>${x}</span>`).join('')}</div>`;
+ const b=document.createElement('article');
+ b.className='poster';b.dataset.t=tipo;
+ b.style.setProperty('--c',`var(${col})`);
+ const fl='<svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+ const acc=(demo||repo)?`<div class="acc">${demo?`<a class="btn pri ic" href="${demo}" target="_blank" rel="noopener">Ver proyecto ${fl}</a>`:''}${repo?`<a class="btn ic" href="${repo}" target="_blank" rel="noopener">Ver código ${fl}</a>`:''}</div>`:'';
+ b.innerHTML=`<div class="img" style="--img:url('${img}')"><span>${tipo}</span></div>
+ <div class="cu"><h3>${t}</h3><p>${desc}</p>
+ <h4>Objetivo</h4><p>${obj}</p>
+ <h4>Implementación</h4><p>${impl}</p>
+ ${colabHTML}${langHTML}
+ ${tagsHTML}${acc}</div>`;
+ $('#proy').append(b);
+});
 $$('.tab').forEach(t=>t.onclick=()=>{$$('.tab').forEach(x=>x.setAttribute('aria-pressed',x===t));$$('.poster').forEach(c=>c.classList.toggle('hide',t.dataset.f!=='all'&&c.dataset.t!==t.dataset.f))});
 /* certificados */
 function showCert(k){ci=(k+C.length)%C.length;const c=C[ci];mb.innerHTML=`<button class="ib x" onclick="closeM()" aria-label="Cerrar">✕</button><button class="ib nv p" onclick="showCert(ci-1)" aria-label="Anterior">‹</button><button class="ib nv n" onclick="showCert(ci+1)" aria-label="Siguiente">›</button><div class="im"><img src="${c[3]}" alt="Certificado ${c[0]}" onerror="this.remove()"></div><div class="tx"><h3>${c[0]}</h3><p>${c[1]}${c[2]?' — '+c[2]:''}</p></div>`;m.classList.add('o')}
@@ -609,10 +665,6 @@ $('#vergal').onclick=verGal;
 document.addEventListener('click',e=>{if(!e.target.closest('.igwrap')){gbub.classList.remove('on');gfox.setAttribute('aria-expanded','false')}});
 addEventListener('keydown',e=>{if(e.key==='Escape'){gbub.classList.remove('on');gfox.setAttribute('aria-expanded','false')}});
 
-/* sonido de mar generado */
-let ac,on=0;const sb=$('#snd');
-sb.onclick=()=>{if(!ac){ac=new(window.AudioContext||window.webkitAudioContext)();const N=ac.sampleRate*2,bf=ac.createBuffer(1,N,ac.sampleRate),d=bf.getChannelData(0);let l=0;for(let k=0;k<N;k++){l=(l+.02*(Math.random()*2-1))/1.02;d[k]=l*3.5}const s=ac.createBufferSource();s.buffer=bf;s.loop=true;const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=700;const g=ac.createGain();g.gain.value=.5;const o=ac.createOscillator();o.frequency.value=.12;const lg=ac.createGain();lg.gain.value=.3;o.connect(lg).connect(g.gain);s.connect(f).connect(g).connect(ac.destination);s.start();o.start()}
-on=!on;on?ac.resume():ac.suspend();sb.textContent=(on?'🔊':'🔇')+' Sonido de mar';sb.setAttribute('aria-pressed',!!on)};
 </script>
 <script src="idioma.js"></script>
 </body>
