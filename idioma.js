@@ -1,10 +1,32 @@
 (function(){
 const EN={
-"Bases de datos":"Databases","Inicio":"Home","Sobre mí":"About me","Habilidades":"Skills","Proyectos":"Projects","Certificaciones":"Certifications","Contacto":"Contact",
+"Experiencia":"Experience","Proyectos reales y servicio a la comunidad.":"Real projects and community service.",
+"Desarrolladora Web Freelance":"Freelance Web Developer",
+"CONAC · Confederación Nacional de Asentamientos Campesinos de Panamá":"CONAC · National Confederation of Peasant Settlements of Panama",
+"Freelance":"Freelance",
+"Diseñé y desarrollé el sitio web institucional, incluyendo configuración como PWA.":"I designed and built the institutional website, including PWA setup.",
+"Creé páginas dedicadas a los asentamientos regionales y gestioné contenido multimedia.":"I created pages for the regional settlements and managed multimedia content.",
+"Elaboré un anexo fotográfico académico tras trabajo de campo en asentamientos de Veraguas.":"I produced an academic photo annex after fieldwork in settlements in Veraguas.",
+"Maestra Voluntaria":"Volunteer Teacher",
+"Escuela Llano Largo · La Chorrera, Panamá Oeste":"Llano Largo School · La Chorrera, West Panama",
+"Servicio social · 120 horas":"Social service · 120 hours",
+"Impartí clases a niños de educación primaria.":"I taught primary school children.",
+"Diseñé y ejecuté actividades educativas.":"I designed and ran educational activities.",
+"Preparé material didáctico digital utilizando Canva y PowerPoint.":"I prepared digital teaching materials using Canva and PowerPoint.",
+"¿Quieres ver la galería?":"Want to see the gallery?","Ver galería":"View gallery",
+"Toca al zorrito para ver la galería":"Tap the little fox to see the gallery",
+"Bases de datos":"Databases",
+"Galería":"Gallery",
+"Momentos que me gusta recordar. Toca una carta para traerla al frente.":"Moments I like to remember. Tap a card to bring it to the front.",
+"Abrir álbum":"Open album",
+"Álbumes":"Albums",
+"Viajes":"Trips","Amigos":"Friends","Universidad":"University",
+"Inicio":"Home","Sobre mí":"About me","Habilidades":"Skills","Proyectos":"Projects","Certificaciones":"Certifications","Contacto":"Contact",
 "Portafolio de informática y ciberseguridad":"Computer science and cybersecurity portfolio",
 "Me muevo entre":"I move between",
 "Estudiante de Informática en la Universidad de Panamá. Construyo proyectos web y estoy aprendiendo ciberseguridad. 🦊":"Computer science student at the University of Panama. I build web projects and I’m learning cybersecurity. 🦊",
-"Ver proyectos":"View projects","Contáctame":"Contact me",
+"Ver proyectos":"View projects","Contáctame":"Contact me","Ver mi CV":"View my CV",
+"Enviar correo":"Send email","Descargar CV":"Download CV","Abrir en otra pestaña":"Open in new tab",
 "Vibras para calmarme":"Vibes to calm me down","Vibras para calmarme":"Vibes to calm me down",
 "Me apasiona la tecnología y todo lo relacionado con el aprendizaje y la innovación. Siempre estoy dispuesta a participar en cursos, capacitaciones y experiencias que me permitan ampliar mis conocimientos, especialmente en informática, desarrollo de software y ciberseguridad.":"I’m passionate about technology and everything related to learning and innovation. I’m always ready to take part in courses, trainings and experiences that let me expand my knowledge, especially in computer science, software development and cybersecurity.",
 "Me gusta explorar nuevas herramientas y convertir lo aprendido en proyectos y soluciones prácticas.":"I like exploring new tools and turning what I learn into practical projects and solutions.",
@@ -19,8 +41,13 @@ const EN={
 "Sitio web con páginas por provincia, noticias, galería y contacto. Trabajo en equipo en el repositorio de 0bregon.":"Website with a page for each province, news, a gallery and contact. Teamwork in 0bregon’s repository.",
 "Proyecto colaborativo del repositorio de 0bregon.":"Collaborative project from 0bregon’s repository.",
 "Proyecto propio publicado en mi GitHub.":"Own project published on my GitHub.",
+"Plataforma educativa gamificada para niños: islas de Lengua de Señas, Español, Matemáticas y Programación, progreso con desbloqueo, misiones con rachas y panel para padres. Migré el backend de Firebase a Supabase. HTML, CSS, JavaScript, Supabase.":"Gamified educational platform for children: Sign Language, Spanish, Math and Programming islands, progress with unlockable content, streak-based missions and a parent dashboard. I migrated the backend from Firebase to Supabase. HTML, CSS, JavaScript, Supabase.",
+"Sitio institucional de la Confederación Nacional de Asentamientos Campesinos de Panamá: una página por asentamiento, PWA y contenido multimedia. Proyecto freelance en equipo. HTML, CSS, JavaScript, PWA.":"Institutional website for the National Confederation of Peasant Settlements of Panama: a page per settlement, PWA and multimedia content. Freelance team project. HTML, CSS, JavaScript, PWA.",
+"Rastreo de transporte público en tiempo real para la ruta La Valdeza, La Chorrera: panel de chofer con GPS en vivo y panel de pasajero con la ubicación actualizada. Integrado con la plataforma IoT Vento para la competencia Protofy. HTML, CSS, JavaScript, Geolocation API.":"Real-time public transport tracking for the La Valdeza route in La Chorrera: a driver panel with live GPS and a passenger panel with up-to-date location. Integrated with the Vento IoT platform for the Protofy competition. HTML, CSS, JavaScript, Geolocation API.",
+"App de preguntas y respuestas para estudiar el examen teórico de conducción (ATTT) en Panamá. HTML, CSS, JavaScript.":"Question-and-answer app to study for the driving theory exam (ATTT) in Panama. HTML, CSS, JavaScript.",
+"Reto 3: agente conversacional que estima el copago y la cobertura de un seguro médico según el síntoma, la especialidad y el hospital de la red.":"Challenge 3: a conversational agent that estimates the copay and coverage of a health insurance plan based on the symptom, the specialty and the network hospital.",
 "Estimador de Copago":"Copay Estimator","Reto 3: un estimador de copago.":"Challenge 3: a copay estimator.",
-"Ver detalle →":"View details →","Ver código":"View code",
+"Ver detalle →":"View details →","Ver código":"View code","Ver demo":"View demo",
 "Cursos, retos y capacitaciones que he completado. Toca una para ver el certificado en grande.":"Courses, challenges and trainings I’ve completed. Tap one to see the certificate larger.",
 "Hackathon Copa Airlines – 7ª edición":"Copa Airlines Hackathon – 7th edition",
 "Hacking Ético: de 0 a Hackear Aplicaciones":"Ethical Hacking: From 0 to Hacking Applications",
@@ -39,10 +66,11 @@ const EN={
 "Cambiar tema":"Change theme","Menú":"Menu","Principal":"Main","Cerrar":"Close","Anterior":"Previous","Siguiente":"Next","Filtrar proyectos":"Filter projects"
 };
 const ES={};for(const k in EN)ES[EN[k]]=k;
-const WS=['desarrollo web','ciberseguridad','DevOps y APIs','hacking ético'],
-      WE=['web development','cybersecurity','DevOps and APIs','ethical hacking'];
+const WS=['desarrollo web','ciberseguridad','hacking ético'],
+      WE=['web development','cybersecurity','ethical hacking'];
 const q=s=>document.querySelector(s);
 let lang='es';
+window.trad=s=>(lang==='en'&&EN[s])?EN[s]:s;
 
 /* estilo y botón (se crean solos) */
 const st=document.createElement('style');
@@ -82,6 +110,7 @@ function set(l){
   b.textContent=l==='en'?'ES':'EN';
   b.setAttribute('aria-label',l==='en'?'Cambiar a español':'Switch to English');
   try{localStorage.setItem('lang',l)}catch(e){}
+  document.dispatchEvent(new Event('idioma'));
 }
 b.addEventListener('click',()=>set(lang==='es'?'en':'es'));
 try{if(localStorage.getItem('lang')==='en')set('en')}catch(e){}
