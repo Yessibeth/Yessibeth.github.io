@@ -1,6 +1,43 @@
 (function(){
 const EN={
-"Experiencia":"Experience","Proyectos reales y servicio a la comunidad.":"Real projects and community service.",
+/* menú y portada */
+"Inicio":"Home","Sobre mí":"About me","Habilidades":"Skills","Certificaciones":"Certifications","Experiencia":"Experience","Proyectos":"Projects","Contacto":"Contact",
+"Portafolio de informática y ciberseguridad":"Computer science and cybersecurity portfolio",
+"Me muevo entre":"I move between",
+"Estudiante de Informática en la Universidad de Panamá. Construyo proyectos web y estoy aprendiendo ciberseguridad. 🦊":"Computer science student at the University of Panama. I build web projects and I’m learning cybersecurity. 🦊",
+"Ver proyectos":"View projects","Contáctame":"Contact me","Ver mi CV":"View my CV",
+"Vibras para calmarme":"Vibes to calm me down",
+"Toca al zorrito":"Tap the little fox",
+
+/* sobre mí */
+"Soy estudiante de Informática para la Gestión Educativa y Empresarial en la Universidad de Panamá, con experiencia desarrollando aplicaciones web, desde el frontend hasta la integración de bases de datos y plataformas IoT.":"I’m a Computer Science for Educational and Business Management student at the University of Panama, with experience building web applications, from the frontend to database and IoT platform integration.",
+"Me apasiona la tecnología y todo lo relacionado con el aprendizaje y la innovación. Siempre estoy en modo aprendizaje y disfruto explorar las distintas áreas del mundo tecnológico. Nunca le digo que no a un curso, capacitación o experiencia que me permita ampliar mis conocimientos, especialmente en informática, desarrollo de software y ciberseguridad.":"I’m passionate about technology and everything related to learning and innovation. I’m always in learning mode and I enjoy exploring the different areas of the tech world. I never say no to a course, training or experience that lets me expand my knowledge, especially in computer science, software development and cybersecurity.",
+"Me gusta explorar nuevas herramientas y convertir lo aprendido en proyectos y soluciones prácticas. He construido proyectos propios como MIPA (rastreo de transporte en tiempo real) y Sendero del Saber (plataforma educativa gamificada), además de mi experiencia freelance desarrollando el sitio web institucional de CONAC. Mi interés está en el desarrollo web, las bases de datos y las tecnologías educativas.":"I like exploring new tools and turning what I learn into practical projects and solutions. I’ve built my own projects such as MIPA (real-time transport tracking) and Sendero del Saber (a gamified educational platform), plus freelance experience building CONAC’s institutional website. My interests are web development, databases and educational technology.",
+"Más allá de la pantalla, disfruto la vida: compartir con mis amigos, reír, viajar y conocer nuevos lugares, y disfrutar cada etapa sin tomarme todo demasiado en serio. Ese equilibrio es lo que me mantiene motivada para seguir aprendiendo y creciendo. Siempre estoy abierta a conocer gente nueva, nuevos proyectos y nuevas oportunidades.":"Beyond the screen, I enjoy life: spending time with my friends, laughing, traveling and discovering new places, and enjoying every stage without taking everything too seriously. That balance keeps me motivated to keep learning and growing. I’m always open to meeting new people, new projects and new opportunities.",
+
+/* habilidades */
+"Lo que uso hoy y lo que quiero seguir aprendiendo.":"What I use today and what I want to keep learning.",
+"Desarrollo web":"Web development","Programación y herramientas":"Programming and tools","Ciberseguridad":"Cybersecurity","DevOps y APIs":"DevOps and APIs","Bases de datos":"Databases",
+"Hacking ético":"Ethical hacking","Buenas prácticas":"Best practices","Pruebas de API":"API testing",
+
+/* certificaciones */
+"Cursos, retos y capacitaciones que he completado.":"Courses, challenges and trainings I’ve completed.",
+"Filtrar certificaciones":"Filter certifications",
+"Todos":"All","Seminario":"Seminar","Competencias":"Competitions","Cursos":"Courses",
+"★ Destacado":"★ Featured",
+"Universidad del Futuro – Tendencias Pedagógicas":"University of the Future – Pedagogical Trends",
+"Universidad de Panamá · 2026":"University of Panama · 2026",
+"Seminario-Taller de 40 horas":"40-hour workshop seminar",
+"Hackathon Copa Airlines – 7ª edición":"Copa Airlines Hackathon – 7th edition",
+"DevOps, APIs y observabilidad":"DevOps, APIs and observability",
+"OEA Cyber Challenge Panamá 2026":"OAS Cyber Challenge Panama 2026",
+"Organización de los Estados Americanos · Oct 2026":"Organization of American States · Oct 2026",
+"Certificado de finalización del curso":"Course completion certificate",
+"Hacking Ético: de 0 a Hackear Aplicaciones":"Ethical Hacking: From 0 to Hacking Applications",
+"Jornada de 6 horas sobre vulnerabilidades en aplicaciones":"6-hour session on application vulnerabilities",
+
+/* experiencia */
+"Proyectos reales y servicio a la comunidad.":"Real projects and community service.",
 "Desarrolladora Web Freelance":"Freelance Web Developer",
 "CONAC · Confederación Nacional de Asentamientos Campesinos de Panamá":"CONAC · National Confederation of Peasant Settlements of Panama",
 "Freelance":"Freelance",
@@ -13,61 +50,49 @@ const EN={
 "Impartí clases a niños de educación primaria.":"I taught primary school children.",
 "Diseñé y ejecuté actividades educativas.":"I designed and ran educational activities.",
 "Preparé material didáctico digital utilizando Canva y PowerPoint.":"I prepared digital teaching materials using Canva and PowerPoint.",
+
+/* proyectos */
+"Trabajos propios y colaboraciones: qué hace cada uno y cómo lo construí.":"My own work and collaborations: what each one does and how I built it.",
+"Filtrar proyectos":"Filter projects",
+"Propios":"Own","Colaboración":"Collaboration","Proyecto propio":"Own project",
+"Lenguajes":"Languages","Colaboradores":"Collaborators",
+"Objetivo":"Goal","Implementación":"Implementation",
+"Ver más":"Show more","Ver menos":"Show less",
+"Ver proyecto":"View project","Ver código":"View code",
+/* Sendero del Saber */
+"Plataforma educativa para niños y niñas de Panamá, con cursos interactivos en islas de español, matemáticas, programación y lenguaje de señas, además de perfil, tienda y panel para padres.":"Educational platform for children in Panama, with interactive courses on Spanish, math, programming and sign language islands, plus a profile, a store and a parent dashboard.",
+"Que los niños aprendan a su propio ritmo, jugando, en un espacio pensado para ellos, y que los padres puedan acompañar su avance.":"Let children learn at their own pace, through play, in a space designed for them, while parents can follow their progress.",
+"Páginas en HTML5 y CSS, una por isla, con registro e inicio de sesión para estudiantes y padres (vinculados con un código) usando Supabase. Panel para padres, perfil, tienda y publicación en Netlify.":"HTML5 and CSS pages, one per island, with sign-up and login for students and parents (linked with a code) using Supabase. Parent dashboard, profile, store and deployment on Netlify.",
+/* CONAC */
+"Sitio informativo de varias páginas para la Confederación Nacional de Asentamientos Campesinos de Panamá.":"Multi-page informational website for the National Confederation of Peasant Settlements of Panama.",
+"Organizar el acceso a la historia, actividades e información comunitaria de la organización.":"Organize access to the history, activities and community information of the organization.",
+"Páginas de organización, asentamientos, campañas, galería y noticias; navegación móvil; diseño responsive; publicación en GitHub Pages.":"Pages for the organization, settlements, campaigns, gallery and news; mobile navigation; responsive design; published on GitHub Pages.",
+/* Gimnasio Mental */
+"Proyecto colaborativo del repositorio de 0bregon.":"Collaborative project from 0bregon’s repository.",
+"Crear el sitio web de un centro de entrenamiento cognitivo para niños, que presenta sus programas de pensamiento analítico (Lógica Matemática, Comprensión Lectora y Algoritmos Básicos) y permite a los padres reservar en línea una evaluación diagnóstica gratuita, eligiendo programa, fecha y horario.":"Build the website of a cognitive training center for children, presenting its analytical-thinking programs (Mathematical Logic, Reading Comprehension and Basic Algorithms) and letting parents book a free diagnostic assessment online, choosing the program, date and time.",
+"Sitio web multipágina con HTML, CSS y JavaScript puro. La página de inicio presenta los programas, beneficios y testimonios, y dirige a una página de agendamiento con formulario completo: datos del acudiente y del niño, programa de interés, fecha (con bloqueo de fechas pasadas) y horario disponible. Las reservas se guardan en una base de datos Supabase. Diseño responsive con menú móvil.":"Multi-page website built with plain HTML, CSS and JavaScript. The home page presents the programs, benefits and testimonials, and leads to a booking page with a full form: guardian and child details, program of interest, date (past dates are blocked) and available time slot. Bookings are saved in a Supabase database. Responsive design with a mobile menu.",
+
+/* galería (ventana del zorrito) */
+"Galería":"Gallery",
+"Momentos que me gusta recordar.":"Moments I like to remember.",
 "¿Quieres ver la galería?":"Want to see the gallery?","Ver galería":"View gallery",
 "Toca al zorrito para ver la galería":"Tap the little fox to see the gallery",
-"Bases de datos":"Databases",
-"Galería":"Gallery",
-"Momentos que me gusta recordar. Toca una carta para traerla al frente.":"Moments I like to remember. Tap a card to bring it to the front.",
-"Abrir álbum":"Open album",
-"Álbumes":"Albums",
-"Viajes":"Trips","Amigos":"Friends","Universidad":"University",
-"Inicio":"Home","Sobre mí":"About me","Habilidades":"Skills","Proyectos":"Projects","Certificaciones":"Certifications","Contacto":"Contact",
-"Portafolio de informática y ciberseguridad":"Computer science and cybersecurity portfolio",
-"Me muevo entre":"I move between",
-"Estudiante de Informática en la Universidad de Panamá. Construyo proyectos web y estoy aprendiendo ciberseguridad. 🦊":"Computer science student at the University of Panama. I build web projects and I’m learning cybersecurity. 🦊",
-"Ver proyectos":"View projects","Contáctame":"Contact me","Ver mi CV":"View my CV",
-"Enviar correo":"Send email","Descargar CV":"Download CV","Abrir en otra pestaña":"Open in new tab",
-"Vibras para calmarme":"Vibes to calm me down","Vibras para calmarme":"Vibes to calm me down",
-"Me apasiona la tecnología y todo lo relacionado con el aprendizaje y la innovación. Siempre estoy dispuesta a participar en cursos, capacitaciones y experiencias que me permitan ampliar mis conocimientos, especialmente en informática, desarrollo de software y ciberseguridad.":"I’m passionate about technology and everything related to learning and innovation. I’m always ready to take part in courses, trainings and experiences that let me expand my knowledge, especially in computer science, software development and cybersecurity.",
-"Me gusta explorar nuevas herramientas y convertir lo aprendido en proyectos y soluciones prácticas.":"I like exploring new tools and turning what I learn into practical projects and solutions.",
-"Fuera de la tecnología, disfruto compartir con mis amigos, viajar y conocer nuevos lugares.":"Outside of technology, I enjoy spending time with my friends, traveling and discovering new places.",
-"proyectos":"projects","certificaciones":"certifications","áreas de habilidades":"skill areas",
-"Lo que uso hoy y lo que quiero seguir aprendiendo.":"What I use today and what I want to keep learning.",
-"Desarrollo web":"Web development","Programación y herramientas":"Programming and tools","Ciberseguridad":"Cybersecurity","DevOps y APIs":"DevOps and APIs",
-"Hacking ético":"Ethical hacking","Buenas prácticas":"Best practices","Pruebas de API":"API testing",
-"Trabajos propios y colaboraciones. Toca uno para ver el detalle y abrir su repositorio en GitHub.":"My own work and collaborations. Tap one to see the details and open its GitHub repository.",
-"Todos":"All","Propios":"Own","Colaboración":"Collaboration","Reto":"Challenge","Proyecto propio":"Own project",
-"Proyecto educativo con estructura en HTML5: islas de español, matemáticas, programación y señas, además de perfil, tienda y panel para padres.":"Educational project built with HTML5: Spanish, math, programming and sign language islands, plus a profile, a store and a parent dashboard.",
-"Sitio web con páginas por provincia, noticias, galería y contacto. Trabajo en equipo en el repositorio de 0bregon.":"Website with a page for each province, news, a gallery and contact. Teamwork in 0bregon’s repository.",
-"Proyecto colaborativo del repositorio de 0bregon.":"Collaborative project from 0bregon’s repository.",
-"Proyecto propio publicado en mi GitHub.":"Own project published on my GitHub.",
-"Plataforma educativa gamificada para niños: islas de Lengua de Señas, Español, Matemáticas y Programación, progreso con desbloqueo, misiones con rachas y panel para padres. Migré el backend de Firebase a Supabase. HTML, CSS, JavaScript, Supabase.":"Gamified educational platform for children: Sign Language, Spanish, Math and Programming islands, progress with unlockable content, streak-based missions and a parent dashboard. I migrated the backend from Firebase to Supabase. HTML, CSS, JavaScript, Supabase.",
-"Sitio institucional de la Confederación Nacional de Asentamientos Campesinos de Panamá: una página por asentamiento, PWA y contenido multimedia. Proyecto freelance en equipo. HTML, CSS, JavaScript, PWA.":"Institutional website for the National Confederation of Peasant Settlements of Panama: a page per settlement, PWA and multimedia content. Freelance team project. HTML, CSS, JavaScript, PWA.",
-"Rastreo de transporte público en tiempo real para la ruta La Valdeza, La Chorrera: panel de chofer con GPS en vivo y panel de pasajero con la ubicación actualizada. Integrado con la plataforma IoT Vento para la competencia Protofy. HTML, CSS, JavaScript, Geolocation API.":"Real-time public transport tracking for the La Valdeza route in La Chorrera: a driver panel with live GPS and a passenger panel with up-to-date location. Integrated with the Vento IoT platform for the Protofy competition. HTML, CSS, JavaScript, Geolocation API.",
-"App de preguntas y respuestas para estudiar el examen teórico de conducción (ATTT) en Panamá. HTML, CSS, JavaScript.":"Question-and-answer app to study for the driving theory exam (ATTT) in Panama. HTML, CSS, JavaScript.",
-"Reto 3: agente conversacional que estima el copago y la cobertura de un seguro médico según el síntoma, la especialidad y el hospital de la red.":"Challenge 3: a conversational agent that estimates the copay and coverage of a health insurance plan based on the symptom, the specialty and the network hospital.",
-"Estimador de Copago":"Copay Estimator","Reto 3: un estimador de copago.":"Challenge 3: a copay estimator.",
-"Ver detalle →":"View details →","Ver código":"View code","Ver demo":"View demo",
-"Cursos, retos y capacitaciones que he completado. Toca una para ver el certificado en grande.":"Courses, challenges and trainings I’ve completed. Tap one to see the certificate larger.",
-"Hackathon Copa Airlines – 7ª edición":"Copa Airlines Hackathon – 7th edition",
-"Hacking Ético: de 0 a Hackear Aplicaciones":"Ethical Hacking: From 0 to Hacking Applications",
-"OEA Cyber Challenge Panamá 2026":"OAS Cyber Challenge Panama 2026",
-"Universidad del Futuro – Tendencias Pedagógicas":"University of the Future – Pedagogical Trends",
-"Organización de los Estados Americanos · Oct 2026":"Organization of American States · Oct 2026",
-"Universidad de Panamá · 2026":"University of Panama · 2026",
-"DevOps, APIs y observabilidad":"DevOps, APIs and observability",
-"Certificado de finalización del curso":"Course completion certificate",
-"Jornada de 6 horas sobre vulnerabilidades en aplicaciones":"6-hour session on application vulnerabilities",
-"Seminario-Taller de 40 horas":"40-hour workshop seminar",
+"Abrir álbum":"Open album","Álbumes":"Albums",
+"Universidad":"University",
+
+/* contacto y pie */
 "¿Quieres colaborar o conocer más de mi trabajo? Escríbeme.":"Want to collaborate or learn more about my work? Write to me.",
+"Enviar correo":"Send email",
 "La Chorrera, Panamá":"La Chorrera, Panama",
 "Siempre abierta a aprender, colaborar y crecer ✨":"Always open to learning, collaborating and growing ✨",
 "Volver al inicio":"Back to top",
-"Cambiar tema":"Change theme","Menú":"Menu","Principal":"Main","Cerrar":"Close","Anterior":"Previous","Siguiente":"Next","Filtrar proyectos":"Filter projects"
+
+/* botones y etiquetas */
+"Cambiar tema":"Change theme","Menú":"Menu","Principal":"Main","Cerrar":"Close","Anterior":"Previous","Siguiente":"Next"
 };
 const ES={};for(const k in EN)ES[EN[k]]=k;
-const WS=['desarrollo web','ciberseguridad','hacking ético'],
-      WE=['web development','cybersecurity','ethical hacking'];
+const WS=['desarrollo web','ciberseguridad','DevOps y APIs','hacking ético'],
+      WE=['web development','cybersecurity','DevOps and APIs','ethical hacking'];
 const q=s=>document.querySelector(s);
 let lang='es';
 window.trad=s=>(lang==='en'&&EN[s])?EN[s]:s;
@@ -100,8 +125,17 @@ function run(root){
   if(root.matches&&root.matches('[aria-label],[title]'))els.push(root);
   els.forEach(e=>['aria-label','title'].forEach(a=>{const v=e.getAttribute(a);if(v&&map[v])e.setAttribute(a,map[v])}));
 }
-/* contenido que aparece después (ventanas de proyectos y certificados) */
-new MutationObserver(ms=>{if(lang!=='en')return;ms.forEach(m=>m.addedNodes.forEach(x=>{if(x.nodeType===1)run(x)}))}).observe(document.body,{childList:true,subtree:true});
+/* contenido que aparece después (ventanas, tarjetas, "Ver más / Ver menos") */
+new MutationObserver(ms=>{
+  if(lang!=='en')return;
+  ms.forEach(m=>m.addedNodes.forEach(x=>{
+    if(x.nodeType===1)run(x);
+    else if(x.nodeType===3&&x.parentNode&&!x.parentNode.closest('script,style,#ty')){
+      const r=tr(x.nodeValue,EN);
+      if(r!==null)x.nodeValue=x.nodeValue.match(/^\s*/)[0]+r+x.nodeValue.match(/\s*$/)[0];
+    }
+  }));
+}).observe(document.body,{childList:true,subtree:true});
 
 function set(l){
   lang=l;document.documentElement.lang=l;
