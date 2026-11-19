@@ -14,6 +14,7 @@ const EN={
 "Me apasiona la tecnología y todo lo relacionado con el aprendizaje y la innovación. Siempre estoy en modo aprendizaje y disfruto explorar las distintas áreas del mundo tecnológico. Nunca le digo que no a un curso, capacitación o experiencia que me permita ampliar mis conocimientos, especialmente en informática, desarrollo de software y ciberseguridad.":"I’m passionate about technology and everything related to learning and innovation. I’m always in learning mode and I enjoy exploring the different areas of the tech world. I never say no to a course, training or experience that lets me expand my knowledge, especially in computer science, software development and cybersecurity.",
 "Me gusta explorar nuevas herramientas y convertir lo aprendido en proyectos y soluciones prácticas. He construido proyectos propios como MIPA (rastreo de transporte en tiempo real) y Sendero del Saber (plataforma educativa gamificada), además de mi experiencia freelance desarrollando el sitio web institucional de CONAC. Mi interés está en el desarrollo web, las bases de datos y las tecnologías educativas.":"I like exploring new tools and turning what I learn into practical projects and solutions. I’ve built my own projects such as MIPA (real-time transport tracking) and Sendero del Saber (a gamified educational platform), plus freelance experience building CONAC’s institutional website. My interests are web development, databases and educational technology.",
 "Más allá de la pantalla, disfruto la vida: compartir con mis amigos, reír, viajar y conocer nuevos lugares, y disfrutar cada etapa sin tomarme todo demasiado en serio. Ese equilibrio es lo que me mantiene motivada para seguir aprendiendo y creciendo. Siempre estoy abierta a conocer gente nueva, nuevos proyectos y nuevas oportunidades.":"Beyond the screen, I enjoy life: spending time with my friends, laughing, traveling and discovering new places, and enjoying every stage without taking everything too seriously. That balance keeps me motivated to keep learning and growing. I’m always open to meeting new people, new projects and new opportunities.",
+"Foto de Yessibeth López":"Photo of Yessibeth López",
 
 /* habilidades */
 "Lo que uso hoy y lo que quiero seguir aprendiendo.":"What I use today and what I want to keep learning.",
@@ -21,9 +22,9 @@ const EN={
 "Hacking ético":"Ethical hacking","Buenas prácticas":"Best practices","Pruebas de API":"API testing",
 
 /* certificaciones */
-"Cursos, retos y capacitaciones que he completado.":"Courses, challenges and trainings I’ve completed.",
+"Lo que he aprendido y logrado: seminarios, competencias, cursos e insignias. Y seguiré aprendiendo.":"What I’ve learned and achieved: seminars, competitions, courses and badges. And I’ll keep learning.",
 "Filtrar certificaciones":"Filter certifications",
-"Todos":"All","Seminario":"Seminar","Competencias":"Competitions","Cursos":"Courses",
+"Todos":"All","Seminario":"Seminar","Competencias":"Competitions","Cursos":"Courses","Insignias":"Badges",
 "★ Destacado":"★ Featured",
 "Universidad del Futuro – Tendencias Pedagógicas":"University of the Future – Pedagogical Trends",
 "Universidad de Panamá · 2026":"University of Panama · 2026",
@@ -35,9 +36,12 @@ const EN={
 "Certificado de finalización del curso":"Course completion certificate",
 "Hacking Ético: de 0 a Hackear Aplicaciones":"Ethical Hacking: From 0 to Hacking Applications",
 "Jornada de 6 horas sobre vulnerabilidades en aplicaciones":"6-hour session on application vulnerabilities",
+"Introduction to Cybersecurity – Insignia digital":"Introduction to Cybersecurity – Digital badge",
+"Insignia verificada en Credly":"Badge verified on Credly",
+"Verificar en Credly":"Verify on Credly",
 
 /* experiencia */
-"Proyectos reales y servicio a la comunidad.":"Real projects and community service.",
+"Experiencias que me han formado.":"Experiences that have shaped me.",
 "Desarrolladora Web Freelance":"Freelance Web Developer",
 "CONAC · Confederación Nacional de Asentamientos Campesinos de Panamá":"CONAC · National Confederation of Peasant Settlements of Panama",
 "Freelance":"Freelance",
@@ -52,7 +56,7 @@ const EN={
 "Preparé material didáctico digital utilizando Canva y PowerPoint.":"I prepared digital teaching materials using Canva and PowerPoint.",
 
 /* proyectos */
-"Trabajos propios y colaboraciones: qué hace cada uno y cómo lo construí.":"My own work and collaborations: what each one does and how I built it.",
+"Mis proyectos y colaboraciones. Esperemos que pronto venga más.":"My projects and collaborations. Hopefully more will come soon.",
 "Filtrar proyectos":"Filter projects",
 "Propios":"Own","Colaboración":"Collaboration","Proyecto propio":"Own project",
 "Lenguajes":"Languages","Colaboradores":"Collaborators",
@@ -77,7 +81,7 @@ const EN={
 "Momentos que me gusta recordar.":"Moments I like to remember.",
 "¿Quieres ver la galería?":"Want to see the gallery?","Ver galería":"View gallery",
 "Toca al zorrito para ver la galería":"Tap the little fox to see the gallery",
-"Abrir álbum":"Open album","Álbumes":"Albums",
+"Zorrito dormido":"Sleeping little fox",
 "Universidad":"University",
 
 /* contacto y pie */
@@ -93,6 +97,8 @@ const EN={
 const ES={};for(const k in EN)ES[EN[k]]=k;
 const WS=['desarrollo web','ciberseguridad','DevOps y APIs','hacking ético'],
       WE=['web development','cybersecurity','DevOps and APIs','ethical hacking'];
+const TIT={es:'Yessibeth López | Portafolio',en:'Yessibeth López | Portfolio'},
+      DES={es:'Portafolio de Yessibeth López: informática, ciberseguridad y desarrollo web.',en:'Yessibeth López’s portfolio: computer science, cybersecurity and web development.'};
 const q=s=>document.querySelector(s);
 let lang='es';
 window.trad=s=>(lang==='en'&&EN[s])?EN[s]:s;
@@ -114,6 +120,13 @@ function tr(s,map){
   if(t.includes(' — ')){const r=t.split(' — ').map(x=>map[x]||x).join(' — ');return r!==t?r:null}
   return null;
 }
+/* textos de atributos: aria-label, title y alt ("Certificado …" / "Certificate …") */
+function trAttr(v,map){
+  if(map[v])return map[v];
+  const pre=lang==='en'?'Certificado ':'Certificate ',to=lang==='en'?'Certificate ':'Certificado ';
+  if(v.startsWith(pre)){const rest=v.slice(pre.length);return to+(map[rest]||rest)}
+  return null;
+}
 function run(root){
   const map=lang==='en'?EN:ES,w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;
   while(n=w.nextNode()){
@@ -121,9 +134,9 @@ function run(root){
     const r=tr(n.nodeValue,map);
     if(r!==null)n.nodeValue=n.nodeValue.match(/^\s*/)[0]+r+n.nodeValue.match(/\s*$/)[0];
   }
-  const els=[...root.querySelectorAll('[aria-label],[title]')];
-  if(root.matches&&root.matches('[aria-label],[title]'))els.push(root);
-  els.forEach(e=>['aria-label','title'].forEach(a=>{const v=e.getAttribute(a);if(v&&map[v])e.setAttribute(a,map[v])}));
+  const els=[...root.querySelectorAll('[aria-label],[title],[alt]')];
+  if(root.matches&&root.matches('[aria-label],[title],[alt]'))els.push(root);
+  els.forEach(e=>['aria-label','title','alt'].forEach(a=>{const v=e.getAttribute(a);if(v){const r=trAttr(v,map);if(r)e.setAttribute(a,r)}}));
 }
 /* contenido que aparece después (ventanas, tarjetas, "Ver más / Ver menos") */
 new MutationObserver(ms=>{
@@ -141,6 +154,8 @@ function set(l){
   lang=l;document.documentElement.lang=l;
   if(typeof W!=='undefined'){W.length=0;W.push(...(l==='en'?WE:WS))}
   run(document.body);
+  document.title=TIT[l];
+  const md=q('meta[name="description"]');if(md)md.setAttribute('content',DES[l]);
   b.textContent=l==='en'?'ES':'EN';
   b.setAttribute('aria-label',l==='en'?'Cambiar a español':'Switch to English');
   try{localStorage.setItem('lang',l)}catch(e){}
